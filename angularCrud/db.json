@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "fName": "Umang",
+      "lName": "Kumar",
+      "emailID": "umang.kumar17312@marwadieducation.edu.in",
+      "mobNo": "9621289657",
+      "salary": "33220",
+      "id": 2
+    },
+    {
+      "fName": "",
+      "lName": "",
+      "emailID": "",
+      "mobNo": "",
+      "salary": "",
+      "id": 3
+    },
+    {
+      "fName": "",
+      "lName": "",
+      "emailID": "",
+      "mobNo": "",
+      "salary": "",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
