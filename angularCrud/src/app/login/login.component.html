@@ -1,0 +1,37 @@
+<div class="container col-md-4 mx-4 my-4" >
+    
+    <div class="container-fluid">
+        <div class="row">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="bg-primary" style="text-align: center;">
+                    <h2 style="color:rgb(9, 12, 10) te">Login Form</h2>
+                </div>
+              
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Enter Email</label>
+                    <input type="email" class="form-control" [class.is-invalid]="f['email'].invalid && f['email'].touched"id="exampleInputPassword1" formControlName="email">
+                  </div>
+
+                  <div *ngIf="f['email'].invalid && f['email'].touched"> 
+                    <small    *ngIf="f['email'].errors && f['email'].errors['required']"     class="text-danger">Please enter email</small>
+                    <small    *ngIf="f['email'].errors && f['email'].errors['pattern']"     class="text-danger">Please enter valid email</small>
+                  </div>
+
+        
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Enter password</label>
+                    <input type="password" class="form-control" [class.is-invalid]="f['pass'].invalid && f['pass'].touched" id="exampleInputPassword1" formControlName="pass">
+                  </div>
+
+                  <div *ngIf="f['pass'].invalid && f['pass'].touched"> 
+                    <small  *ngIf="f['pass'].errors && f['pass'].errors['required']"     class="text-danger">Minimum eight characters, at least one letter and one number:</small> 
+                  </div>
+                    <div  class="bg-primary text-center">
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+                    </div>
+               
+              </form>
+              <a  class="text-center my-2" routerLink="/signup"  style="color: black ">New User? click to SignUp</a>
+        </div>
+    </div>
+</div>

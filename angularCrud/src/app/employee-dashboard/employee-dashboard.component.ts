@@ -8,19 +8,11 @@ import { ServiceService } from '../shared/service.service';
   styleUrls: ['./employee-dashboard.component.css']
 })
 
-// export class student{
-//   constructor(
-//     public fName!:string,
-//     public lName!:string,
-//     public emailID!:string,
-//     public mobNo!:string,
-//     public salary!:string
-// ){}
 
-// }
 
 export class EmployeeDashboardComponent implements OnInit {
   employeeData: any;
+  dodisplay=true;
   status: any;
   constructor(private service: ServiceService) {
 
@@ -44,12 +36,13 @@ export class EmployeeDashboardComponent implements OnInit {
   postEmployeeDetails() {
 
     const signUp = this.employeeForm.value;
-    console.log(signUp);
+    console.log(signUp); 
 
 
     this.service.postEmployee(this.employeeForm.value).subscribe((res: any) => {
       console.log(res);
       alert("Employee added Successfully");
+      this.employeeForm.reset();
     }
     )
   }
@@ -61,8 +54,9 @@ export class EmployeeDashboardComponent implements OnInit {
     })
   }
 
+  
   delEmployee(row:number) {
-   
+   debugger
     this.service.deleteEmployee(row).subscribe(() => { 
 
      alert("Employee data deleted");
@@ -70,7 +64,41 @@ export class EmployeeDashboardComponent implements OnInit {
 )
   }
 
+  onEdit(row:any){
+    this.employeeData.id=row.id;
+    this.employeeForm.controls['fName'].setValue(row.fName);
+    this.employeeForm.controls['lName'].setValue(row.lName);
+    this.employeeForm.controls['emailID'].setValue(row.emailID);
+    this.employeeForm.controls['mobNo'].setValue(row.mobNo);
+    this.employeeForm.controls['salary'].setValue(row.salary);
 
 
+  }
+  updateEmployeeDetails(){
+  
+    // this.employeeData.fName=this.employeeForm.value.fName;
+    // this.employeeData.lName=this.employeeForm.value.lName;
+    // this.employeeData.emailID=this.employeeForm.value.emailID;
+    // this.employeeData.mobNo=this.employeeForm.value.mobNo;
+    // this.employeeData.salary=this.employeeForm.value.salary;
+
+  
+    this.service.updateEmployee(this.employeeData, this.employeeData.id).subscribe(res=>{
+      console.log(res);
+      alert("Updated Successfully");
+      this.getAllEmployee();
+    })
+  }
+
+
+  display(){
+    this.dodisplay=false;
+    this.employeeForm.reset();
+    
+  }
+  Editdisplay(){
+    this.dodisplay=true;
+   
+  }
 
 }

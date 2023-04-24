@@ -20,14 +20,20 @@ export class ServiceService {
   }
 
   updateEmployee(data:any,id:number){
-    return this.http.put("http://localhost:3000/posts"+id,data)
+    debugger
+    return this.http.put("http://localhost:3000/posts/"+id,data);
     // .pipe(Map)
   }
 
   deleteEmployee(id:number){
-    debugger
-    return this.http.delete("http://localhost:3000/posts"+id)
-    debugger
+   
+    return this.http.delete("http://localhost:3000/posts/"+id)
+   
+    // .pipe(Map)
+  }
+
+  signupEmployee(data:any){
+    return this.http.post("http://localhost:3000/signup",data)
     // .pipe(Map)
   }
 
