@@ -1,0 +1,107 @@
+:host{
+    display: block;
+    padding:2rem 1rem 3rem;
+    background-color: rgb(154, 156, 156);
+    clip-path: polygon(0% 0%, 100% 0%,100% 90%,50% 100%,0% 90%);
+}
+.profile{
+    width: 10rem;
+    height: 10rem;
+    float: right;
+    padding-top: 2rem; 
+}
+
+.profile img{
+    width: 50%;
+    height: 50%;
+    border: 1px solid rgb(179, 182, 184);
+    border-radius: 5%;
+    margin-left:60rem;
+    margin-top:2rem;
+    
+}
+
+.title{
+    font-size: 4rem;
+    text-align:left;
+    font-style:italic;
+    color:black;
+    text-decoration: underline;
+    font-family: 'Roboto Condensed',sans-serif;
+    
+}
+.name{
+    padding:2rem;
+    color:white;
+    font-size: 2rem;
+    font-family: 'Roboto Condensed',sans-serif;
+
+}
+
+.name span:nth-of-type(1) span{
+    font-size: 3rem;
+    color:black;
+}
+
+.name span:nth-of-type(2){
+    display:inline-block;
+    color:black;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-shadow: 5px 5px 10px black;
+
+}
+
+.education a{
+    color:#0c2e60;
+    font-size: 1rem;
+    font-family: 'Roboto Condensed',sans-serif;
+    float: right;
+    text-decoration: none;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+
+}
+
+.typed {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing;
+    animation-duration: 1.5s;
+    animation-timing-function: steps(30, end);
+    animation-fill-mode: forwards;
+  }
+    
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+.btn-group, .btn span{
+    font-size: 1rem;
+    color: rgb(214, 230, 214);
+    background-color: rgb(3, 59, 3);
+    margin-bottom: 1rem;
+    margin-left:2rem;
+    text-align:center;
+    border-radius: 0.4rem;
+    padding-right: 10px;
+   
+}
+.icon a{
+    padding-left: 2rem;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    color:#0c2e60;
+}
+.icon, .phone{
+    color:rgb(5, 75, 28);
+}
+.icon, .mail{
+    color:rgb(92, 7, 7);
+}
+.icon, .git{
+    color:rgba(64, 68, 64, 0.397);
+}

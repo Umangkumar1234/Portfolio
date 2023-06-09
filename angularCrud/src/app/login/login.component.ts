@@ -26,11 +26,11 @@ export class LoginComponent {
   
 
   login(){
-    this.service.signupEmployee(this.loginForm.value).subscribe((res: any) => {
+    this.service.getEmployee().subscribe((res: any) => {
 
       console.log(res);
 
-      const user=res.find((a: { email: string | null | undefined; pass: string | null | undefined; })=>{
+      const user=res.find((a: any)=>{
           return a.email===this.loginForm.value.email && a.pass===this.loginForm.value.pass
       });
       if(user){

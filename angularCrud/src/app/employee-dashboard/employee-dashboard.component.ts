@@ -42,6 +42,7 @@ export class EmployeeDashboardComponent implements OnInit {
     this.service.postEmployee(this.employeeForm.value).subscribe((res: any) => {
       console.log(res);
       alert("Employee added Successfully");
+      
       this.employeeForm.reset();
     }
     )
@@ -60,6 +61,7 @@ export class EmployeeDashboardComponent implements OnInit {
     this.service.deleteEmployee(row).subscribe(() => { 
 
      alert("Employee data deleted");
+     this.getAllEmployee();
      }
 )
   }

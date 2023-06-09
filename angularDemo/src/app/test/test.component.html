@@ -1,0 +1,20 @@
+<p>test works!</p>
+<h3>{{address}}</h3>
+<h1>hey, how are you {{name}}</h1>
+
+<button class="btn btn-primary" disabled={{Disable}}>click me</button>
+
+<hr><br>
+<button class="btn btn-danger" [disabled]="Disable">click me</button>
+<hr><br>
+<button class="btn btn-danger" (click)="onclick()">Subscribe my channel</button>
+<h1>{{thnk}}</h1>
+<hr><br>
+<input type="text" placeholder="Enter your name" [(ngModel)]="name">
+<h1>Welcome {{name}}</h1>
+<hr><br>
+<input type="number"  id="customerName" name="name1" [(ngModel)]="name1">
+
+<h1 [ngClass]="name1>10?alert("YEs"):alert("No")">{{name1}}</h1>
+
+<hr><br>

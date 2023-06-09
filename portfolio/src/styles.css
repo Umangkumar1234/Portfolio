@@ -1,0 +1,21 @@
+
+
+* {
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background-image: url(src/assets/img/bg.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
